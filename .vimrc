@@ -5,6 +5,7 @@ call vundle#rc()
 
 " let Vundle manage Vundle
 Bundle 'gmarik/vundle'
+Bundle 'bling/vim-airline'
 Bundle 'flazz/vim-colorschemes'
 Bundle 'tpope/vim-rails'
 Bundle 'vim-ruby/vim-ruby'
@@ -17,6 +18,7 @@ Bundle 'kien/ctrlp.vim'
 Bundle 'msanders/snipmate.vim'
 "Bundle 'ervandew/supertab'
 "Bundle 'mileszs/ack.vim'
+Bundle 'rking/ag.vim'
 "Bundle 'scrooloose/nerdcommenter'
 Bundle 'scrooloose/syntastic'
 "Bundle 'Raimondi/delimitMate'
@@ -59,6 +61,12 @@ set shiftwidth=2
 
 " edit file in path of current file
 map <Leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
+
+" map ctrlp to leader f
+map <Leader>f :CtrlP<CR>
+map <Leader>b :CtrlPBuffer<CR>
+" use silver searcher for ctrlp
+"let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 
 " Faster split resizing (+,-)
 if bufwinnr(1)
