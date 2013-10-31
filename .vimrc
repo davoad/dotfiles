@@ -1,3 +1,4 @@
+runtime macros/matchit.vim
 set nocompatible
 filetype off
 set rtp+=~/.vim/bundle/vundle/
@@ -5,17 +6,25 @@ call vundle#rc()
 
 " let Vundle manage Vundle
 Bundle 'gmarik/vundle'
+Bundle 'Valloric/YouCompleteMe'
 Bundle 'bling/vim-airline'
 Bundle 'flazz/vim-colorschemes'
 Bundle 'tpope/vim-rails'
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'tpope/vim-rake'
+Bundle 'tpope/vim-bundler'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-endwise'
+Bundle 'tpope/vim-unimpaired'
+Bundle 'tpope/vim-commentary'
+Bundle 'nelstrom/vim-textobj-rubyblock'
+Bundle 'kana/vim-textobj-user'
 Bundle 'scrooloose/nerdtree'
 Bundle 'kien/ctrlp.vim'
-Bundle 'msanders/snipmate.vim'
+"Bundle 'guns/ultisnips'
+Bundle 'SirVer/ultisnips.git' 
+"Bundle 'msanders/snipmate.vim'
 "Bundle 'ervandew/supertab'
 "Bundle 'mileszs/ack.vim'
 Bundle 'rking/ag.vim'
@@ -45,14 +54,13 @@ set title
 
 let mapleader = ","
 set autoindent
-set expandtab
 syntax on             " Enable syntax highlighting
 filetype on           " Enable filetype detection
 filetype indent on    " Enable filetype-specific indenting
 filetype plugin on    " Enable filetype-specific plugins
+compiler ruby         " Enable compiler support for ruby
 set ts=2
 set expandtab
-compiler ruby         " Enable compiler support for ruby
 set hlsearch
 set showmatch
 set laststatus=2
@@ -66,7 +74,9 @@ map <Leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
 map <Leader>f :CtrlP<CR>
 map <Leader>b :CtrlPBuffer<CR>
 " use silver searcher for ctrlp
-"let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+" map Silver Searcher
+ map <leader>a :Ag!<space>
 
 " Faster split resizing (+,-)
 if bufwinnr(1)
@@ -79,3 +89,6 @@ map <C-j> <C-W>j
 map <C-k> <C-W>k
 map <C-H> <C-W>h
 map <C-L> <C-W>l
+let g:UltiSnipsExpandTrigger="<c-j>"
+let g:UltiSnipsJumpForwardTrigger="<c-j>"
+let g:UltiSnipsJumpBackwardTrigger="<c-k>"
