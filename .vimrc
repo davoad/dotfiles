@@ -19,6 +19,7 @@ Bundle 'tpope/vim-endwise'
 Bundle 'tpope/vim-unimpaired'
 Bundle 'tpope/vim-commentary'
 Bundle 'tpope/rbenv-ctags'
+Bundle 'thoughtbot/vim-rspec'
 Bundle 'nelstrom/vim-textobj-rubyblock'
 Bundle 'kana/vim-textobj-user'
 Bundle 'scrooloose/nerdtree'
@@ -36,7 +37,7 @@ Bundle 'scrooloose/syntastic'
 "Bundle 'vim-scripts/IndexedSearch'
 "Bundle 'vim-scripts/L9.git'
 "Bundle 'vim-scripts/matchit.zip'
-"Bundle 'godlygeek/tabular'
+Bundle 'godlygeek/tabular'
 "Bundle 'git://gist.github.com/287147.git'
  
 "Bundle 'tpope/vim-cucumber'
@@ -51,6 +52,8 @@ set background=dark
 colorscheme badwolf
 
 set number            " line numbers
+set relativenumber
+
 set title
 
 let mapleader = ","
@@ -74,6 +77,7 @@ map <Leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
 " map ctrlp to leader f
 map <Leader>f :CtrlP<CR>
 map <Leader>b :CtrlPBuffer<CR>
+
 " use silver searcher for ctrlp
 let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 " map Silver Searcher
@@ -93,3 +97,9 @@ map <C-L> <C-W>l
 let g:UltiSnipsExpandTrigger="<c-j>"
 let g:UltiSnipsJumpForwardTrigger="<c-j>"
 let g:UltiSnipsJumpBackwardTrigger="<c-k>"
+
+" RSpec.vim mappings
+map <Leader>t :call RunCurrentSpecFile()<CR>
+map <Leader>s :call RunNearestSpec()<CR>
+map <Leader>l :call RunLastSpec()<CR>
+map <Leader>T :call RunAllSpecs()<CR>
