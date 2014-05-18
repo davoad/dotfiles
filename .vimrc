@@ -20,32 +20,40 @@ Bundle 'tpope/vim-unimpaired'
 Bundle 'tpope/vim-commentary'
 Bundle 'tpope/vim-dispatch'
 Bundle 'tpope/rbenv-ctags'
+Bundle 'tpope/vim-dispatch'
 Bundle 'thoughtbot/vim-rspec'
 Bundle 'nelstrom/vim-textobj-rubyblock'
 Bundle 'kana/vim-textobj-user'
 Bundle 'scrooloose/nerdtree'
 Bundle 'kien/ctrlp.vim'
+Bundle 'joequery/Stupid-EasyMotion'
 "Bundle 'guns/ultisnips'
 Bundle 'SirVer/ultisnips.git' 
 "Bundle 'msanders/snipmate.vim'
 "Bundle 'ervandew/supertab'
 "Bundle 'mileszs/ack.vim'
 Bundle 'rking/ag.vim'
-"Bundle 'scrooloose/nerdcommenter'
+Bundle 'scrooloose/nerdcommenter'
 Bundle 'scrooloose/syntastic'
-"Bundle 'Raimondi/delimitMate'
 "Bundle 'mattn/zencoding-vim'
 "Bundle 'vim-scripts/IndexedSearch'
 "Bundle 'vim-scripts/L9.git'
 "Bundle 'vim-scripts/matchit.zip'
 Bundle 'godlygeek/tabular'
-"Bundle 'git://gist.github.com/287147.git'
  
 "Bundle 'tpope/vim-cucumber'
 "Bundle 'tpope/vim-haml'
 "Bundle 'pangloss/vim-javascript'
 "Bundle 'kchmck/vim-coffee-script'
-
+" Javascript
+Bundle 'jelera/vim-javascript-syntax'
+Bundle 'marijnh/tern_for_vim'
+"Bundle 'Raimondi/delimitMate'
+Bundle 'jiangmiao/auto-pairs'
+" Web Tools
+Bundle "mattn/emmet-vim"
+Bundle "chrisbra/color_highlight"
+Bundle "groenewege/vim-less"
 " Set syntax highlighting options.
 syntax on
 set t_Co=256
@@ -65,6 +73,7 @@ filetype indent on    " Enable filetype-specific indenting
 filetype plugin on    " Enable filetype-specific plugins
 compiler ruby         " Enable compiler support for ruby
 set ts=2
+set backspace=2
 set expandtab
 set hlsearch
 set showmatch
@@ -106,3 +115,4 @@ map <Leader>l :call RunLastSpec()<CR>
 map <Leader>T :call RunAllSpecs()<CR>
 
 let g:rspec_command = "Dispatch rspec {spec}"
+let g:html_indent_inctags = "html,body,head,tbody,template"
