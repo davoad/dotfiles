@@ -8,3 +8,4 @@ eval "$(rbenv init -)"
 
 ####
 # put any bash customizations in here
+alias mvim='/usr/local/Cellar/macvim/7.4-72/bin/mvim'

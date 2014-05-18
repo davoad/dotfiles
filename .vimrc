@@ -18,6 +18,7 @@ Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-endwise'
 Bundle 'tpope/vim-unimpaired'
 Bundle 'tpope/vim-commentary'
+Bundle 'tpope/vim-dispatch'
 Bundle 'tpope/rbenv-ctags'
 Bundle 'thoughtbot/vim-rspec'
 Bundle 'nelstrom/vim-textobj-rubyblock'
@@ -103,3 +104,5 @@ map <Leader>t :call RunCurrentSpecFile()<CR>
 map <Leader>s :call RunNearestSpec()<CR>
 map <Leader>l :call RunLastSpec()<CR>
 map <Leader>T :call RunAllSpecs()<CR>
+
+let g:rspec_command = "Dispatch rspec {spec}"
