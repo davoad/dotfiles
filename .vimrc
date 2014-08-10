@@ -28,7 +28,7 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'kien/ctrlp.vim'
 Bundle 'joequery/Stupid-EasyMotion'
 "Bundle 'guns/ultisnips'
-Bundle 'SirVer/ultisnips.git' 
+Bundle 'SirVer/ultisnips.git'
 "Bundle 'msanders/snipmate.vim'
 "Bundle 'ervandew/supertab'
 "Bundle 'mileszs/ack.vim'
@@ -40,7 +40,6 @@ Bundle 'scrooloose/syntastic'
 "Bundle 'vim-scripts/L9.git'
 "Bundle 'vim-scripts/matchit.zip'
 Bundle 'godlygeek/tabular'
- 
 "Bundle 'tpope/vim-cucumber'
 "Bundle 'tpope/vim-haml'
 "Bundle 'pangloss/vim-javascript'
@@ -54,6 +53,11 @@ Bundle 'jiangmiao/auto-pairs'
 Bundle "mattn/emmet-vim"
 Bundle "chrisbra/color_highlight"
 Bundle "groenewege/vim-less"
+
+" tmux
+Bundle 'andersoncustodio/vim-tmux'
+Bundle 'christoomey/vim-tmux-navigator'
+Bundle 'benmills/vimux'
 " Set syntax highlighting options.
 syntax on
 set t_Co=256
@@ -108,11 +112,18 @@ let g:UltiSnipsExpandTrigger="<c-j>"
 let g:UltiSnipsJumpForwardTrigger="<c-j>"
 let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 
+" Paste
+map <Leader>p :set paste<CR>o<esc>"*]p:set nopaste<cr>"
+
 " RSpec.vim mappings
 map <Leader>t :call RunCurrentSpecFile()<CR>
 map <Leader>s :call RunNearestSpec()<CR>
 map <Leader>l :call RunLastSpec()<CR>
 map <Leader>T :call RunAllSpecs()<CR>
 
-let g:rspec_command = "Dispatch rspec {spec}"
+" Vimux
+map <leader>x :VimuxPromptCommand<CR>
+
+let g:rspec_command = 'call VimuxRunCommand("clear; rspec {spec}")'
+"let g:rspec_command = "Dispatch rspec {spec}"
 let g:html_indent_inctags = "html,body,head,tbody,template"
