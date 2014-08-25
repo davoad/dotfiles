@@ -19,7 +19,7 @@ Plugin 'tpope/vim-endwise'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-dispatch'
-Plugin 'tpope/rbenv-ctags'
+Plugin 'tpope/vim-rbenv'
 Plugin 'thoughtbot/vim-rspec'
 Plugin 'nelstrom/vim-textobj-rubyblock'
 Plugin 'kana/vim-textobj-user'
@@ -107,6 +107,9 @@ map <C-j> <C-W>j
 map <C-k> <C-W>k
 map <C-H> <C-W>h
 map <C-L> <C-W>l
+
+" YCM - use tags from files 
+let g:ycm_collect_identifiers_from_tags_files = 1
 
 " Ultisnips
 let g:UltiSnipsExpandTrigger="<c-j>"
