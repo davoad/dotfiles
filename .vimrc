@@ -1,11 +1,11 @@
 runtime macros/matchit.vim
 set nocompatible
 filetype off
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
 " let Vundle manage Vundle
-Plugin 'gmarik/vundle'
+Plugin 'gmarik/Vundle.vim'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'bling/vim-airline'
 Plugin 'flazz/vim-colorschemes'
@@ -52,6 +52,8 @@ Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'benmills/vimux'
 " git
 Plugin 'sjl/splice.vim'
+call vundle#end()
+
 " Set syntax highlighting options.
 syntax on
 set t_Co=256
