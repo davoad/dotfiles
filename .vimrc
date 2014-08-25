@@ -84,6 +84,9 @@ set shiftwidth=2
 " edit file in path of current file
 map <Leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
 
+" quick save
+nnoremap <leader>w :w<CR>
+
 " map ctrlp to leader f
 map <Leader>f :CtrlP<CR>
 map <Leader>b :CtrlPBuffer<CR>
@@ -105,7 +108,7 @@ map <C-k> <C-W>k
 map <C-H> <C-W>h
 map <C-L> <C-W>l
 
-"Ultisnips
+" Ultisnips
 let g:UltiSnipsExpandTrigger="<c-j>"
 let g:UltiSnipsJumpForwardTrigger="<c-j>"
 let g:UltiSnipsJumpBackwardTrigger="<c-k>"
@@ -123,5 +126,4 @@ map <Leader>T :call RunAllSpecs()<CR>
 map <leader>x :VimuxPromptCommand<CR>
 
 let g:rspec_command = 'call VimuxRunCommand("clear; rspec {spec}")'
-"let g:rspec_command = "Dispatch rspec {spec}"
 let g:html_indent_inctags = "html,body,head,tbody,template"
