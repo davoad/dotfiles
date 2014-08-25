@@ -5,59 +5,53 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
 " let Vundle manage Vundle
-Bundle 'gmarik/vundle'
-Bundle 'Valloric/YouCompleteMe'
-Bundle 'bling/vim-airline'
-Bundle 'flazz/vim-colorschemes'
-Bundle 'tpope/vim-rails'
-Bundle 'vim-ruby/vim-ruby'
-Bundle 'tpope/vim-rake'
-Bundle 'tpope/vim-bundler'
-Bundle 'tpope/vim-fugitive'
-Bundle 'tpope/vim-surround'
-Bundle 'tpope/vim-endwise'
-Bundle 'tpope/vim-unimpaired'
-Bundle 'tpope/vim-commentary'
-Bundle 'tpope/vim-dispatch'
-Bundle 'tpope/rbenv-ctags'
-"Bundle 'tpope/vim-dispatch'
-Bundle 'thoughtbot/vim-rspec'
-Bundle 'nelstrom/vim-textobj-rubyblock'
-Bundle 'kana/vim-textobj-user'
-Bundle 'scrooloose/nerdtree'
-Bundle 'kien/ctrlp.vim'
-Bundle 'joequery/Stupid-EasyMotion'
-"Bundle 'guns/ultisnips'
-Bundle 'SirVer/ultisnips.git'
-"Bundle 'msanders/snipmate.vim'
-"Bundle 'ervandew/supertab'
-"Bundle 'mileszs/ack.vim'
-Bundle 'rking/ag.vim'
-Bundle 'scrooloose/nerdcommenter'
-Bundle 'scrooloose/syntastic'
-"Bundle 'mattn/zencoding-vim'
-"Bundle 'vim-scripts/IndexedSearch'
-"Bundle 'vim-scripts/L9.git'
-"Bundle 'vim-scripts/matchit.zip'
-Bundle 'godlygeek/tabular'
-"Bundle 'tpope/vim-cucumber'
-"Bundle 'tpope/vim-haml'
-"Bundle 'pangloss/vim-javascript'
-"Bundle 'kchmck/vim-coffee-script'
+Plugin 'gmarik/vundle'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'bling/vim-airline'
+Plugin 'flazz/vim-colorschemes'
+Plugin 'tpope/vim-rails'
+Plugin 'vim-ruby/vim-ruby'
+Plugin 'tpope/vim-rake'
+Plugin 'tpope/vim-bundler'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-endwise'
+Plugin 'tpope/vim-unimpaired'
+Plugin 'tpope/vim-commentary'
+Plugin 'tpope/vim-dispatch'
+Plugin 'tpope/rbenv-ctags'
+Plugin 'thoughtbot/vim-rspec'
+Plugin 'nelstrom/vim-textobj-rubyblock'
+Plugin 'kana/vim-textobj-user'
+Plugin 'scrooloose/nerdtree'
+Plugin 'kien/ctrlp.vim'
+Plugin 'joequery/Stupid-EasyMotion'
+Plugin 'SirVer/ultisnips.git'
+Plugin 'honza/vim-snippets'
+Plugin 'rking/ag.vim'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'scrooloose/syntastic'
+Plugin 'godlygeek/tabular'
+"Plugin 'tpope/vim-cucumber'
+"Plugin 'tpope/vim-haml'
+"Plugin 'pangloss/vim-javascript'
+"Plugin 'kchmck/vim-coffee-script'
 " Javascript
-Bundle 'jelera/vim-javascript-syntax'
-Bundle 'marijnh/tern_for_vim'
-"Bundle 'Raimondi/delimitMate'
-Bundle 'jiangmiao/auto-pairs'
+Plugin 'jelera/vim-javascript-syntax'
+Plugin 'marijnh/tern_for_vim'
+"Plugin 'Raimondi/delimitMate'
+"Plugin 'jiangmiao/auto-pairs'
 " Web Tools
-Bundle "mattn/emmet-vim"
-Bundle "chrisbra/color_highlight"
-Bundle "groenewege/vim-less"
-
+Plugin 'mattn/emmet-vim'
+Plugin 'chrisbra/color_highlight'
+Plugin 'groenewege/vim-less'
+Plugin 'tpope/vim-ragtag'
 " tmux
-Bundle 'andersoncustodio/vim-tmux'
-Bundle 'christoomey/vim-tmux-navigator'
-Bundle 'benmills/vimux'
+Plugin 'andersoncustodio/vim-tmux'
+Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'benmills/vimux'
+" git
+Plugin 'sjl/splice.vim'
 " Set syntax highlighting options.
 syntax on
 set t_Co=256
@@ -108,10 +102,12 @@ map <C-j> <C-W>j
 map <C-k> <C-W>k
 map <C-H> <C-W>h
 map <C-L> <C-W>l
+
+"Ultisnips
 let g:UltiSnipsExpandTrigger="<c-j>"
 let g:UltiSnipsJumpForwardTrigger="<c-j>"
 let g:UltiSnipsJumpBackwardTrigger="<c-k>"
-
+" let g:UltiSnipsSnippetDirectories=["UltiSnips"]
 " Paste
 map <Leader>p :set paste<CR>o<esc>"*]p:set nopaste<cr>"
 
