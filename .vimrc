@@ -5,6 +5,8 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 " let Vundle manage Vundle
+Plugin 'DeleteTrailingWhitespace'
+Plugin 'bkad/CamelCaseMotion'
 Plugin 'gmarik/Vundle.vim'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'bling/vim-airline'
@@ -52,6 +54,8 @@ Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'benmills/vimux'
 " git
 Plugin 'sjl/splice.vim'
+" api blueprint
+Plugin 'kylef/apiblueprint.vim'
 call vundle#end()
 
 " Set syntax highlighting options.
@@ -87,6 +91,18 @@ map <Leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
 " quick save
 nnoremap <leader>w :w<CR>
 
+" Stript trailing whitespace
+nnoremap <Leader>ws :call StripTrailingWhitespaces()<CR>
+" Removes trailing whitespace
+fun! StripTrailingWhitespaces()
+ let line = line(".")
+ let col = col(".")
+ let search = @/
+ keepjumps %s/\s\+$//e
+ let @/=search
+ call cursor(line, col)
+endfun
+
 " map ctrlp to leader f
 map <Leader>f :CtrlP<CR>
 map <Leader>b :CtrlPBuffer<CR>
@@ -108,7 +124,7 @@ map <C-k> <C-W>k
 map <C-H> <C-W>h
 map <C-L> <C-W>l
 
-" YCM - use tags from files 
+" YCM - use tags from files
 let g:ycm_collect_identifiers_from_tags_files = 1
 
 " Ultisnips
@@ -128,5 +144,19 @@ map <Leader>T :call RunAllSpecs()<CR>
 " Vimux
 map <leader>x :VimuxPromptCommand<CR>
 
-let g:rspec_command = 'call VimuxRunCommand("clear; rspec {spec}")'
+let g:rspec_command = 'call VimuxRunCommand("clear; be rspec {spec}")'
 let g:html_indent_inctags = "html,body,head,tbody,template"
+
+" CamelCase Motions
+map <silent> w <Plug>CamelCaseMotion_w
+map <silent> b <Plug>CamelCaseMotion_b
+map <silent> e <Plug>CamelCaseMotion_e
+sunmap w
+sunmap b
+sunmap e
+omap <silent> iw <Plug>CamelCaseMotion_iw
+xmap <silent> iw <Plug>CamelCaseMotion_iw
+omap <silent> ib <Plug>CamelCaseMotion_ib
+xmap <silent> ib <Plug>CamelCaseMotion_ib
+omap <silent> ie <Plug>CamelCaseMotion_ie
+xmap <silent> ie <Plug>CamelCaseMotion_ie
