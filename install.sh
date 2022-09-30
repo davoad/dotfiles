@@ -3,6 +3,8 @@
 PACKAGES=(
     zsh
     tmux
+    git
+    nvim
 )
 
 for PKG in ${PACKAGES[@]}; do
