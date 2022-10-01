@@ -1,7 +1,7 @@
 local status, telescope = pcall(require, "telescope")
 if (not status) then return end
 local actions = require('telescope.actions')
-local builtin = require("telescope.builtin")
+local builtin = require('telescope.builtin')
 
 telescope.setup {
   defaults = {
@@ -16,10 +16,13 @@ telescope.setup {
       theme = "dropdown",
       hijack_netrw = true,
     },
+    fzf = {
+    },
   },
 }
 
-telescope.load_extension("file_browser")
+telescope.load_extension('file_browser')
+telescope.load_extension('fzf')
 
 vim.keymap.set('n', '<Leader>ff',
   function()
