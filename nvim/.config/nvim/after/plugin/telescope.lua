@@ -24,13 +24,9 @@ telescope.setup {
 telescope.load_extension('file_browser')
 telescope.load_extension('fzf')
 
-vim.keymap.set('n', '<Leader>ff',
-  function()
-    builtin.find_files({
-      no_ignore = false,
-      hidden = true
-    })
-  end)
+vim.keymap.set('n', '<Leader>ff', function()
+  builtin.find_files()
+end)
 vim.keymap.set('n', '<Leader>fg', function()
   builtin.live_grep()
 end)
