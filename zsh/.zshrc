@@ -77,7 +77,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git macos aliases zsh-autosuggestions)
+plugins=(git macos aliases zsh-autosuggestions nvm)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -109,5 +109,43 @@ source $ZSH/oh-my-zsh.sh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-export NVM_DIR="$HOME/.nvm"
-. "$(brew --prefix nvm)/nvm.sh"
+eval "$(rbenv init - zsh)"
+
+# bun completions
+[ -s "/Users/adam/.bun/_bun" ] && source "/Users/adam/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/Users/adam/miniforge3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/Users/adam/miniforge3/etc/profile.d/conda.sh" ]; then
+        . "/Users/adam/miniforge3/etc/profile.d/conda.sh"
+    else
+        export PATH="/Users/adam/miniforge3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+
+if [ -f "/Users/adam/miniforge3/etc/profile.d/mamba.sh" ]; then
+    . "/Users/adam/miniforge3/etc/profile.d/mamba.sh"
+fi
+
+# pnpm
+export PNPM_HOME="/Users/adam/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/adam/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/adam/Downloads/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/adam/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/adam/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
