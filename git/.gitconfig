@@ -1,4 +1,6 @@
 [user]
+	name = Adam Davidson
+	email = adam.davo@gmail.com
   # set these in ~/.gitconfig.local
 [core]
   pager = delta
@@ -23,3 +25,8 @@
 
 [include]
   path = ~/.gitconfig.local
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true

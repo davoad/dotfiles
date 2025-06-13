@@ -76,6 +76,23 @@ nvim_lsp.tsserver.setup {
 
 nvim_lsp.tailwindcss.setup {}
 
+nvim_lsp.pylsp.setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+  filetypes = {"python"},
+  settings = {
+    configurationSources = {"flake8"},
+    formatCommand = {"black"},
+    pylsp = {
+      plugins = {
+        black = { enabled = true },
+        pylint = { enabled = true, executable = "pylint" },
+        isort = { enabled = true },
+      },
+    },
+  },
+}
+
 nvim_lsp.sumneko_lua.setup {
   on_attach = on_attach,
   settings = {
@@ -93,3 +110,5 @@ nvim_lsp.sumneko_lua.setup {
     },
   },
 }
+
+nvim_lsp.astro.setup {}
