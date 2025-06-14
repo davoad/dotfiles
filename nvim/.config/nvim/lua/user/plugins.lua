@@ -68,4 +68,13 @@ packer.startup(function(use)
   -- Git
   use 'lewis6991/gitsigns.nvim'
   use 'dinhhuy258/git.nvim' -- For git blame & browse
+
+  -- AI Assistant - Claude Code
+  use {
+    'greggh/claude-code.nvim',
+    requires = { 'nvim-lua/plenary.nvim' },
+    config = function()
+      require('claude-code').setup()
+    end
+  }
 end)
